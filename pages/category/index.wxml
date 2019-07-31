@@ -3,12 +3,12 @@
 <view class="container">
     <!-- 左侧菜单 -->
     <scroll-view scroll-y class="leftMenu">
-        <view class="leftMenu_item {{index===currentTab?'active':''}}" wx:for="{{leftGoodsList}}" wx:key="cat_id">
+        <view bindtap='handleMenuChange' data-index='{{index}}' class="leftMenu_item {{index===currentTab?'active':''}}" wx:for="{{leftGoodsList}}" wx:key="cat_id">
             {{item.cat_name}}
         </view>
     </scroll-view>
     <!-- 右侧菜单 -->
-    <scroll-view scroll-y class="rightMenu">
+    <scroll-view scroll-top="{{scrollTop}}"	 scroll-y class="rightMenu">
         <view class="rightMenu_item" wx:for="{{rightGoodsList}}" wx:key="item" wx:for-item="item1" wx:for-index="index1">
             <view class="rightMenu_item_title">
                 <text class="delimiter">/</text>
