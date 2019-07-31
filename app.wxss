@@ -1,0 +1,16 @@
+@import "/styles/iconfont.wxss";
+page,button,swiper,swiper-item,view,text,rich-text,input,image,navigator {
+    box-sizing: border-box
+}
+page,swiper,swiper-item,view,text,rich-text,image,navigator {
+    padding: 0;
+    margin: 0;
+}
+page {
+    --themeColor:#e8424d;
+    color:#666;
+    font-size: 32rpx
+}
+image {
+    width: 100%;
+}

@@ -1,0 +1,45 @@
+// 轮播图
+swiper {
+  height: 340rpx;
+}
+// 分类列表
+.cateList {
+    display: flex;
+    .cateList_item {
+      flex: 1;
+      padding: 36rpx;
+ 
+    }
+  }
+  // 楼层数据
+  .floor {
+    .floor_item {
+      .floor_item_title {
+        padding-top: 20rpx;
+        background-color: #f4f4f4;
+      }
+  
+      .floor_item_content {
+        overflow: hidden;
+        padding: 20rpx 10rpx;
+        .floor_item_content_item {
+          float: left;
+          width: 33.33%;
+          navigator {
+            height: 100%;
+          }
+          &:nth-last-child(-n+4) {
+            height: 750rpx/3*386/232/2;
+            border-left: 10rpx solid #fff;
+            image {
+              height: 100%;
+            }
+            // height: 207.97rpx;
+          }
+          &:nth-last-child(-n+2) {
+            border-top: 10rpx solid #fff;
+          }
+        }
+      }
+    }
+  }

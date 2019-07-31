@@ -1,0 +1,49 @@
+/* pages/category/index.wxss */
+.container {
+  display: flex;
+  height: calc(100vh - 84rpx);
+}
+.container .leftMenu {
+  flex: 1;
+  color: #666;
+  font-size: 28rpx;
+}
+.container .leftMenu .leftMenu_item {
+  padding: 18rpx 0;
+  text-align: center;
+}
+.container .leftMenu .active {
+  color: var(--themeColor);
+  border-left: 4rpx solid var(--themeColor);
+}
+.container .rightMenu {
+  flex: 3;
+}
+.container .rightMenu .rightMenu_item .rightMenu_item_title {
+  text-align: center;
+  padding: 18rpx 0;
+}
+.container .rightMenu .rightMenu_item .rightMenu_item_title text.delimiter {
+  color: #ccc;
+  padding: 0 8rpx;
+}
+.container .rightMenu .rightMenu_item .rightMenu_item_title text.title_name {
+  color: #000;
+  font-size: 28rpx;
+}
+.container .rightMenu .rightMenu_item .rightMenu_item_content {
+  display: flex;
+  flex-wrap: wrap;
+}
+.container .rightMenu .rightMenu_item .rightMenu_item_content .rightMenu_item_content_item {
+  text-align: center;
+  padding-bottom: 10rpx;
+  width: 33.33%;
+}
+.container .rightMenu .rightMenu_item .rightMenu_item_content .rightMenu_item_content_item image {
+  width: 50%;
+}
+.container .rightMenu .rightMenu_item .rightMenu_item_content .rightMenu_item_content_item .contain_name {
+  color: #000;
+  font-size: 28rpx;
+}
