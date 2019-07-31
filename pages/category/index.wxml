@@ -16,7 +16,7 @@
                 <text class="delimiter">/</text>
             </view>
             <view class="rightMenu_item_content">
-                <navigator class="rightMenu_item_content_item" wx:for="{{item1.children}}" wx:key="cat_id" wx:for-item="item2" wx:for-index="index2">
+                <navigator url="/pages/goods_list/index?cid={{item2.cat_id}}" class="rightMenu_item_content_item" wx:for="{{item1.children}}" wx:key="cat_id" wx:for-item="item2" wx:for-index="index2">
                     <image mode="widthFix" src="{{item2.cat_icon}}"></image>
                     <view class="contain_name">{{item2.cat_name}}</view>
                 </navigator>

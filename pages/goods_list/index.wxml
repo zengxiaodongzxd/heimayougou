@@ -1,2 +1,20 @@
-<!--pages/goods_list/index.wxml-->
-<text>pages/goods_list/index.wxml</text>
+<!-- 搜索框 -->
+<search-input></search-input>
+<tabs tabs="{{tabs}}" bindtitleChange="handleTitleChange">
+    <block wx:if="{{currentIndex===0}}">
+    <view class="goodsList">
+         <view class="goods_item" wx:for="{{goods}}" wx:key="goods_id">
+             <view class="leftImg">
+                 <image mode="widthFix" src="{{item.goods_small_logo||'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1565147328&di=3438dbd9e03b9c4abfbd3113abfbc445&imgtype=jpg&er=1&src=http%3A%2F%2Fwww.tucaod.com%2Fwp-content%2Fuploads%2F2017%2F12%2F404huyazhibo.jpg'}}"></image>
+             </view>
+             <view class="rightText">
+                 <view class="info">{{item.goods_name}}</view>
+                 <view class="price">￥{{item.goods_price}}</view>
+             </view>
+         </view>
+    </view>
+
+    </block>
+    <block wx:elif="{{currentIndex===1}}">正在开发中。。</block>
+    <block wx:else="{{currentIndex===2}}">正在开发中。。</block>
+</tabs>
