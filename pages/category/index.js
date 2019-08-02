@@ -1,6 +1,7 @@
 // pages/category/index.js
 import { request } from "../../request/index.js"
 import regeneratorRuntime from '../../lib/runtime/runtime';
+import {getStorageCates,setStorageCates} from '../../utils/storage.js'
 // 商品列表所有数据
 
 Page({
@@ -17,7 +18,7 @@ Page({
   // 获取分类数据
   async getCateList() {
     // let currentTab=this.data.currentTab
-    const cate = wx.getStorageSync('cate');
+    const cate = getStorageCates()
 
 
     // 如果小程序本地存储有数据且不过期执行
@@ -35,7 +36,8 @@ Page({
     })
 
     this.goodsList = res
-    wx.setStorageSync('cate', { time: Date.now(), data: this.goodsList });
+    // wx.setStorageSync('cate', { time: Date.now(), data: this.goodsList });
+    setStorageCates({ time: Date.now(), data: this.goodsList })
     const leftGoodsList = this.goodsList.map((v, i) => ({ cat_id: v.cat_id, cat_name: v.cat_name }))
     this.setData({
       leftGoodsList,
@@ -46,7 +48,7 @@ Page({
   },
   // 左侧菜单点击切换选中
   handleMenuChange(e) {
-    console.log(e);
+    // console.log(e);
     const currentTab = e.currentTarget.dataset.index
     this.setData({
       currentTab,

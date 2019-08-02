@@ -1,66 +1,26 @@
-// pages/cart/index.js
-Page({
+import { getSetting, openSetting, chooseAddress } from '../../utils/asyncWx';
+import regeneratorRuntime from '../../lib/runtime/runtime';
 
-  /**
-   * 页面的初始数据
-   */
+Page({
   data: {
 
   },
+  // 点击添加收货地址按钮
+  async handleAddAddress() {
+    const res1 = await getSetting()
+    const scopeAddress = res1.authSetting['scope.address']
+    // console.log(scopeAddress);
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+    if (scopeAddress || scopeAddress === undefined) {
+      const res2 = await chooseAddress()
+      console.log(res2);
 
-  },
+    } else {
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+      await openSetting()
+      const res3 = await chooseAddress()
+      console.log(res3);
 
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+    }
   }
 })
