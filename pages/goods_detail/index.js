@@ -28,7 +28,7 @@ Page({
         pics: res.pics,
         goods_price: res.goods_price,
         goods_name: res.goods_name,
-        goods_introduce: res.goods_introduce
+        goods_introduce: res.goods_introduce.replace(/\.webp/g,'.jpg')
       }
     })
 
@@ -49,6 +49,7 @@ Page({
     let res = getStorageCart('cart')||{}
     if (!res ||!res[this.goods_id]) {
       this.goodsInfo.num = 1
+      this.goodsInfo.checked = true
      
       res[this.goods_id] = this.goodsInfo
     
@@ -57,6 +58,7 @@ Page({
     
 
     }
+
     setStorageCart(res)
     wx.showToast({
       title: '添加购物车成功',

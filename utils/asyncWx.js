@@ -41,3 +41,32 @@ export const chooseAddress = () => {
     })
 
 }
+// 弹窗提示
+export const showModal = ({content}) => {
+   
+    
+    return new Promise((resolve, reject) => {
+        wx.showModal({
+            title: '提示',
+            content,
+            success (res) {
+                resolve(res)
+            }
+          })
+    })
+
+}
+// 调用微信登录接口
+export const login = ({content}) => {
+    return new Promise((resolve, reject) => {
+       wx.login({
+           timeout:10000,
+           success: (result) => {
+               resolve(result)
+           }
+      
+       });
+         
+    })
+
+}
