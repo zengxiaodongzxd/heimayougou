@@ -33,6 +33,10 @@ swiper image {
 .detail_info .content .collect .icon-shoucang {
   font-size: 40rpx;
 }
+.detail_info .content .collect .icon-shoucang1 {
+  font-size: 40rpx;
+  color: var(--themeColor);
+}
 .detail_info .content .collect .collect_text {
   font-size: 28rpx;
 }

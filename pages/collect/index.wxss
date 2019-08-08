@@ -1,1 +1,20 @@
-/* pages/collect/index.wxss */
+.goodsList .goods_item {
+  display: flex;
+}
+.goodsList .goods_item .leftImg {
+  flex: 1;
+  padding: 30rpx;
+}
+.goodsList .goods_item .rightText {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.goodsList .goods_item .rightText .info {
+  font-size: 28rpx;
+  color: #000;
+}
+.goodsList .goods_item .rightText .price {
+  color: var(--themeColor);
+}

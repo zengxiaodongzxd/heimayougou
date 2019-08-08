@@ -11,8 +11,8 @@
     <view class="price">￥{{goodsDetail.goods_price}}</view>
     <view class="content">
         <view class="leftText">{{goodsDetail.goods_name}}</view>
-        <view class="collect">
-            <text class="iconfont icon-shoucang"></text>
+        <view class="collect" bindtap='handleCollect'>
+            <text class="iconfont {{isCollected?'icon-shoucang1':'icon-shoucang'}}"></text>
             <text class="collect_text">收藏</text>
         </view>
     </view>

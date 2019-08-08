@@ -1,2 +1,57 @@
-<!--pages/user/index.wxml-->
-<text>pages/user/index.wxml</text>
+<view class="bgc_view">
+    <image class="bgc_img" src="{{userInfo.avatarUrl}}"></image>
+    <view class="userInfo">
+        <image class="avatar" src="{{userInfo.avatarUrl}}" mode="widthFix"></image>
+        <view class="nickName">{{userInfo.nickName}}</view>
+    </view>
+</view>
+<view class="info">
+    <view class="content">
+        <view class="collect">
+            <view class="collect_item">
+                <view class="num">0</view>
+                <view class="collect_info">收藏的店铺</view>
+            </view>
+            <navigator url="/pages/collect/index" class="collect_item">
+                <view class="num">{{collectedNum}}</view>
+                <view class="collect_info">收藏的商品</view>
+            </navigator>
+            <view class="collect_item">
+                <view class="num">0</view>
+                <view class="collect_info">关注的商品</view>
+            </view>
+            <view class="collect_item">
+                <view class="num">0</view>
+                <view class="collect_info">我的足迹</view>
+            </view>
+        </view>
+        <view class="order">
+            <view class="title">我的订单</view>
+            <view class="order_content">
+                <navigator url="/pages/order/index?type=1" class="order_item">
+                    <text class="iconfont icon-ding_dan"></text>
+                    <view class="order_info">全部订单</view>
+                </navigator>
+                <navigator url="/pages/order/index?type=2" class="order_item">
+                    <text class="iconfont icon-ding_dan"></text>
+                    <view class="order_info">待付款</view>
+                </navigator>
+                <navigator  url="/pages/order/index?type=3" class="order_item">
+                    <text class="iconfont icon-ding_dan"></text>
+                    <view class="order_info">待收货</view>
+                </navigator>
+                <navigator  url="/pages/order/index?type=4" class="order_item">
+                    <text class="iconfont icon-ding_dan"></text>
+                    <view class="order_info">退款/退货</view>
+                </navigator>
+            </view>
+        </view>
+        <view class="address">收货地址管理</view>
+        <view class="contart">
+            <view class="contart_info">联系客服</view>
+            <view class="phoneNum"></view>
+        </view>
+        <view class="suggestion">意见反馈</view>
+        <view class="about">关于我们</view>
+    </view>
+</view>

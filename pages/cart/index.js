@@ -1,15 +1,16 @@
 import { getSetting, openSetting, chooseAddress, showModal } from '../../utils/asyncWx';
 import regeneratorRuntime from '../../lib/runtime/runtime';
 // import { request } from "../../request/index.js"
-import { getStorageAddress, setStorageAddress, getStorageCart,setStorageCart } from '../../utils/storage.js'
+import { getStorageAddress, setStorageAddress, getStorageCart,setStorageCart} from '../../utils/storage.js'
 Page({
   data: {
-    address: {},
+    address: '',
     cart:{},
     isAllchecked:false,
     totalNum:0,
     totalPrice:0,
-    hasCart:false
+    hasCart:false,
+ 
   },
   onShow() {
     // 获取收货地址
@@ -21,6 +22,7 @@ Page({
     const cart = getStorageCart()
     // console.log(cart);
     this.setCart(cart)
+    
   },
   // 点击添加收货地址按钮
   async handleAddAddress() {
@@ -63,6 +65,7 @@ Page({
         totalNum+=v.num
       }
     })
+
     this.setData({
       cart,
       isAllchecked,
@@ -109,8 +112,9 @@ Page({
       this.setCart(cart)
     }
   },
+ 
   // 点击结算触发
-  handlePay(){
+ async handlePay(){
     const {hasCart,cart,address}=this.data
     const cartArr=Object.values(cart)
   const hasCheckedCart= cartArr.some(v=>v.checked)
@@ -127,11 +131,12 @@ Page({
         mask:true
       })
     } else {
-      wx.navigateTo({
-        url: '/pages/pay/index',
-      });
-        
-      
-    }
+
+        wx.navigateTo({
+          url: '/pages/pay/index',
+        });
+      }
+
+    
   }
 })

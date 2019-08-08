@@ -1,9 +1,10 @@
 import { request } from "../../request/index.js"
-import { getStorageCart, setStorageCart } from '../../utils/storage.js'
+import { getStorageCart, setStorageCart ,getStorageCollect,setStorageCollect } from '../../utils/storage.js'
 import regeneratorRuntime from '../../lib/runtime/runtime';
 Page({
   data: {
-    goodsDetail: {}
+    goodsDetail: {},
+    isCollected:false
   },
   goodsInfo: {},
   goods_id: 0,
@@ -23,13 +24,16 @@ Page({
     console.log(res);
     this.goodsInfo = res
     this.goods_id = this.goodsInfo.goods_id
+    const collect= getStorageCollect()||[]
+    const isCollected= collect.some(v=>v.goods_id===this.goods_id)
     this.setData({
       goodsDetail: {
         pics: res.pics,
         goods_price: res.goods_price,
         goods_name: res.goods_name,
         goods_introduce: res.goods_introduce.replace(/\.webp/g,'.jpg')
-      }
+      },
+      isCollected
     })
 
   },
@@ -41,7 +45,7 @@ Page({
     wx.previewImage({
       current: preViewImgs[index], // 当前显示图片的http链接
       urls: preViewImgs // 需要预览的图片http链接列表
-    })
+    }) 
   },
   // 加入购物车
   handleCartAdd() {
@@ -66,7 +70,31 @@ Page({
       duration: 2000,
       mask:true
     })
+    
+  },
+  // 点击收藏
+  handleCollect(){
+   let collect = getStorageCollect()||[]
+   const collectIndex= collect.findIndex(v=>v.goods_id===this.goods_id)
+    if (collectIndex===-1) {
+      collect.push(this.goodsInfo)
+      this.setData({
+        isCollected:true
+      })
+    setStorageCollect(collect)
+      return
+    }
+    collect.splice(collectIndex,1)
+    // console.log(collect);
+    
+    setStorageCollect(collect)
+    this.setData({
+      isCollected:false
+    })
 
+  //  this.setData({
+  //    isCollected:
+  //  })
   }
 
 

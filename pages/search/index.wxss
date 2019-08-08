@@ -1,1 +1,31 @@
-/* pages/search/index.wxss */
+page {
+  background-color: #ccc;
+}
+.container {
+  display: flex;
+}
+.container .search {
+  background-color: #fff;
+  flex: 1;
+  margin: 10rpx;
+  font-size: 28rpx;
+  padding: 6rpx;
+}
+.container .cancel {
+  background-color: #fff;
+  vertical-align: center;
+  text-align: center;
+  padding: 6rpx;
+  width: 15vw;
+  margin: 10rpx;
+  font-size: 28rpx;
+}
+.searchInfo .searchInfo_item {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 10rpx;
+  background-color: #fff;
+  font-size: 28rpx;
+  padding: 5rpx;
+}

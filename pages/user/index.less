@@ -1,0 +1,148 @@
+.bgc_view {
+    position: relative;
+    overflow: hidden;
+    height: 40vh;
+   box-shadow: 1rpx 1rpx 1rpx #ccc;
+    .bgc_img {
+        filter: blur(5rpx);
+        width: 120vw;
+        height:120vw;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    
+
+    }
+    .userInfo {
+    height: 40vh;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%)  ;
+            .avatar {
+            width: 20vw;
+            height: 20vw;
+            border-radius: 50%;
+            border: 1px solid #dedede;
+            overflow: hidden;
+                .nickName {
+                    color: #000;
+                    font-size: 30rpx;
+                }
+         
+        }
+    }
+
+}
+page {
+    background-color: #eceae6;
+}
+.info {
+    position: relative;
+    .content {
+    
+        position: absolute;
+        left: 50%;
+        top: -40rpx;
+        transform: translateX(-50%);
+        width: 90%;
+        .collect {
+            display: flex;
+            background-color: #fff;
+            margin-bottom: 20rpx;
+          .collect_item {
+            padding: 15rpx 0;
+              flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: cneter;
+            align-items: center;
+            font-size: 30rpx;
+            
+            .num {
+                color: var(--themeColor);
+            }
+      
+
+          }
+        }
+      
+        .order {
+            font-size: 30rpx;
+            margin-bottom: 20rpx;
+
+          .title {
+            margin-bottom: 4rpx;
+            background-color: #fff;
+            font-size: 30rpx;
+            padding: 10rpx 0 10rpx 10rpx;   
+          }
+      
+          .order_content {
+            display: flex;
+            background-color: #fff;
+             
+            .order_item {
+              flex:1 ;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: cneter;
+                align-items: center;
+                font-size: 30rpx;
+                padding: 15rpx 0;
+              .iconfont {
+                color:  var(--themeColor);
+              }
+      
+         
+            }
+          }
+      
+        }
+              .address {
+                background-color: #fff;
+                font-size: 30rpx;
+                padding: 10rpx 0 10rpx 10rpx;
+                margin-bottom: 20rpx;            
+              }
+          
+              .contart {
+                  display: flex;
+                  justify-content: space-between;
+                  background-color: #fff;
+                  font-size: 30rpx;
+                  padding: 10rpx 0 10rpx 10rpx;  
+                  margin-bottom: 20rpx; 
+                .contart_info {
+          
+                }
+          
+                .phoneNum {
+          
+                }
+              }
+          
+              .suggestion {
+                background-color: #fff;
+                font-size: 30rpx;
+                padding: 10rpx 0 10rpx 10rpx;  
+                margin-bottom: 20rpx;            
+
+              }
+          
+              .about {
+                background-color: #fff;
+                font-size: 30rpx;
+                padding: 10rpx 0 10rpx 10rpx;  
+                margin-bottom: 20rpx;            
+
+              }
+      }
+    
+}
